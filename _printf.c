@@ -7,7 +7,6 @@ int _printf(const char *format, ...)
 {
 	int h = 0;
 	int j = 0;
-	int count = 0;
 	int i = 0;
 	char t;
 	char *p;
@@ -58,5 +57,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(data_type);
-	return (count);
+	return (i);
 }
