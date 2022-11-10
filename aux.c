@@ -5,6 +5,8 @@ int function (int a)
 {	
 	int q = 0;
 
+	int cont;
+
 	int i = a;
 
 	int t = a % 10;
@@ -25,6 +27,7 @@ int function (int a)
                 		i = i / 10; 
 				q++;
 			}
+			cont = q;
         		putchar (i + '0');
 			a = a * -1;
         		while (q - 1 > 0)
@@ -48,6 +51,7 @@ int function (int a)
 		q++;
 		h = h * 10;
 	}
+	cont = q;
 	i = a;
 	while (q > 0)
 	{	
@@ -62,7 +66,7 @@ int function (int a)
 		q--;
 	}
 	putchar(t + '0');
-	return (0);
+	return (cont);
 
 
 
