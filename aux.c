@@ -70,7 +70,6 @@ int function (int a, int *cont)
 		q--;
 	}
 	putchar(t + '0');
-	printf("%d",*cont + 1);
 	return (*cont + 1);
 
 
