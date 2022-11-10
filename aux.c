@@ -7,9 +7,9 @@
  * Return: 0
 */
 
-int function (int a, int *cont)
+int function (long int a, int *cont)
 {	
-	int q = 0;
+	long int q = 0;
 
 	long int i = a;
 
@@ -17,25 +17,29 @@ int function (int a, int *cont)
 
 	long int r;
 	
-	int h = 10;	
+	long int cero = 0;
+	
+	long int diez = 10;
+	
+	long int h = 10;	
 		
-	if (a < 0)
+	if (a < cero)
 	{
 		putchar('-');
 		*cont = *cont + 1;
 		i = i * -1;
 		a = a * -1;
 	}
-	if (a < 10 || a == 0)
+	if (a < diez || a == cero)
 	{	
 		putchar(a + '0');
 		*cont = *cont + 1;
 		return (0);
 	}
 	
-	while (i > 0)
+	while (i > cero)
 	{	
-		if (i > 0 && i < 10)
+		if (i > cero && i < diez)
 			break;
 		i = i / 10;
 		q++;
@@ -44,7 +48,7 @@ int function (int a, int *cont)
 /*	putchar(i + '0'); */
 	*cont = *cont + q + 1;
 	i = a;
-	while (q >= 0)
+	while (q >= cero)
 	{	h = h / 10;
 		if (a >= h)
 		{

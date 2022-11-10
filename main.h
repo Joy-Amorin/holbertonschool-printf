@@ -1,4 +1,4 @@
 #include <stdio.h>
 int _printf(const char *format, ...);
-int function(int a,int *cont);
+int function(long int a,int *cont);
 
