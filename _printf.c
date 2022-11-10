@@ -8,6 +8,7 @@ int _printf(const char *format, ...)
 	int h = 0;
 	int j = 0;
 	int i = 0;
+	int cont = 1;
 	char t;
 	char *p;
 	va_list data_type;
@@ -20,7 +21,7 @@ int _printf(const char *format, ...)
 	for (; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
-		{
+		{	
 			if (format[i + 1] == '0')
 				return(0);
 			i++;
@@ -29,6 +30,7 @@ int _printf(const char *format, ...)
 					case 'd': 
 						j = va_arg(data_type, int);
 						function(j);
+						
 						break;
 					case 'i':
 						j = va_arg(data_type, int);
@@ -36,28 +38,31 @@ int _printf(const char *format, ...)
 						break;
 					case 's':
 						p = va_arg(data_type, char *);
+						if (p == NULL)
+							p = "(null)"; 
 						for (h = 0; p[h] != '\0'; h++)
 						{
 							putchar(p[h]);
+							cont++;
 						}
 						break;
 					case 'c': 
 						t = va_arg(data_type, int);
-						if (t == '\0')
-							return (0);
 						putchar(t);
+						cont++;
 						break;
 					case '%':
-							putchar('%');
+						putchar('%');
+						cont++;
 						break;
 				}
 		}
 		else
 		{
 			putchar(format[i]);
+			cont++;
 		}
 	}
-
 	va_end(data_type);
-	return (i - 1);
+	return (cont -1);
 }
