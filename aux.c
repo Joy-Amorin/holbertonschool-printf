@@ -5,6 +5,7 @@
  * @a: number
  * @cont: counter of digits
  * Return: 0
+*/
 
 int function (int a, int *cont)
 {	
