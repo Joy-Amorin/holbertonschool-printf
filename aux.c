@@ -13,53 +13,39 @@ int function (int a, int *cont)
 
 	long int i = a;
 
-	long int t = a % 10;
+/*	long int t = a % 10;*/
 
 	long int r;
 	
-	int h = 10;
-
-	
-	if (a < 10)
+	int h = 10;	
+		
+	if (a < 0)
+	{
+		putchar('-');
+		*cont = *cont + 1;
+		i = i * -1;
+		a = a * -1;
+	}
+	if (a < 10 || a == 0)
 	{	
-		if (a < 0)
-		{	
-			i = i * -1;
-			putchar('-');
-			while (i > 0)
-        		{
-                		i = i / 10; 
-				q++;
-			}
-        		putchar(i + '0');
-			a = a * -1;
-        		while (q - 1 > 0)
-        		{
-				a = a / 10;
-                		r = a % 10;
-               			putchar(r + '0');
-                		q--;
-        		}
-			t = t * -1;
-        		putchar(t + '0');
-		}
-		else
 		putchar(a + '0');
+		*cont = *cont + 1;
 		return (0);
 	}
 	
-	while (i >= 10)
+	while (i > 0)
 	{	
+		if (i > 0 && i < 10)
+			break;
 		i = i / 10;
 		q++;
-		h = h * 10;
+		h= h * 10;
 	}
-/*	putchar(i + '0');*/
+/*	putchar(i + '0'); */
 	*cont = *cont + q + 1;
 	i = a;
-	while (q > 0)
-	{	
-		h = h / 10;
+	while (q >= 0)
+	{	h = h / 10;
 		if (a >= h)
 		{
 			a = a / h;
@@ -69,11 +55,7 @@ int function (int a, int *cont)
 		a = i;
 		q--;
 	}
-	putchar(t + '0');
+	/*putchar(t + '0');*/
 	return (*cont + 1);
-
-
-
-
 }	
 
