@@ -21,6 +21,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '0')
+				return(0);
 			i++;
 			switch(format[i])
 			{	
@@ -57,5 +59,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(data_type);
-	return (i);
+	return (i - 1);
 }
