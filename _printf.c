@@ -3,10 +3,10 @@
 #include <string.h>
 #include "main.h"
 /**
-*_printf - function that produces output acording to format
-*@format: const char
-* Return: cont -1
-*/
+  * _printf - function that produces output acording to format
+  * @format: const char
+  * Return: cont -1
+  */
 
 int _printf(const char *format, ...)
 {
