@@ -6,6 +6,7 @@
   * _printf - function that produces output acording to format
   * @format: const char
   * Return: cont -1
+  *
   */
 
 int _printf(const char *format, ...)
@@ -13,7 +14,8 @@ int _printf(const char *format, ...)
 	int h = 0;
 	int j = 0;
 	int i = 0;
-	int cont = 1;
+	int n = 1;
+	int *cont = &n; 
 	char t;
 	char *p;
 	va_list data_type;
@@ -36,12 +38,12 @@ int _printf(const char *format, ...)
 			{	
 					case 'd': 
 						j = va_arg(data_type, int);
-						function(j);
+						function(j, cont);
 						
 						break;
 					case 'i':
 						j = va_arg(data_type, int);
-						function(j);
+						function(j, cont);
 						break;
 					case 's':
 						p = va_arg(data_type, char *);
@@ -50,32 +52,32 @@ int _printf(const char *format, ...)
 						for (h = 0; p[h] != '\0'; h++)
 						{
 							putchar(p[h]);
-							cont++;
+							*cont = *cont + 1;
 						}
 						break;
 					case 'c': 
 						t = va_arg(data_type, int);
 						putchar(t);
-						cont++;
+						*cont = *cont + 1;
 						break;
 					case '%':
 						putchar('%');
-						cont++;
+						*cont = *cont + 1;
 						break;
 					default:
 						putchar(format[i- 1]);
-						cont++;
+						*cont = *cont + 1;
 						putchar(format[i]);
-						cont++;
+						*cont = *cont + 1;
 						break;
 				}
 		}
 		else
 		{
 			putchar(format[i]);
-			cont++;
+			*cont = *cont + 1;
 		}
 	}
 	va_end(data_type);
-	return (cont -1);
+	return (*cont - 1);
 }

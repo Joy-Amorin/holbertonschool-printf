@@ -1,17 +1,20 @@
 #include <stdio.h>
 #include <unistd.h>
+/**
+ * function - function that prints numbers 
+ * @a: number
+ * @cont: counter of digits
+ * Return: 0
 
-int function (int a)
+int function (int a, int *cont)
 {	
 	int q = 0;
 
-	int cont;
+	long int i = a;
 
-	int i = a;
+	long int t = a % 10;
 
-	int t = a % 10;
-
-	int r;
+	long int r;
 	
 	int h = 10;
 
@@ -22,13 +25,12 @@ int function (int a)
 		{	
 			i = i * -1;
 			putchar('-');
-			while (i > 10)
+			while (i > 0)
         		{
                 		i = i / 10; 
 				q++;
 			}
-			cont = q;
-        		putchar (i + '0');
+        		putchar(i + '0');
 			a = a * -1;
         		while (q - 1 > 0)
         		{
@@ -45,13 +47,14 @@ int function (int a)
 		return (0);
 	}
 	
-	while (i > 10)
+	while (i >= 10)
 	{	
 		i = i / 10;
 		q++;
 		h = h * 10;
 	}
-	cont = q;
+/*	putchar(i + '0');*/
+	*cont = *cont + q + 1;
 	i = a;
 	while (q > 0)
 	{	
@@ -66,7 +69,8 @@ int function (int a)
 		q--;
 	}
 	putchar(t + '0');
-	return (cont);
+	printf("%d",*cont + 1);
+	return (*cont + 1);
 
 
 
