@@ -2,6 +2,11 @@
 #include<stdarg.h>
 #include <string.h>
 #include "main.h"
+/**
+*_printf - function that produces output acording to format
+*@format: const char
+* Return: cont -1
+*/
 
 int _printf(const char *format, ...)
 {
@@ -22,8 +27,10 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{	
-			if (format[i + 1] == '0')
-				return(0);
+			if (format[i + 1] == '\0')
+			{
+				return(-1);
+			}
 			i++;
 			switch(format[i])
 			{	
@@ -53,6 +60,12 @@ int _printf(const char *format, ...)
 						break;
 					case '%':
 						putchar('%');
+						cont++;
+						break;
+					default:
+						putchar(format[i- 1]);
+						cont++;
+						putchar(format[i]);
 						cont++;
 						break;
 				}
