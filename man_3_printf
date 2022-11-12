@@ -1,0 +1,43 @@
+.TH man_3_printf
+
+.SH NAME
+	_printf - format and print data
+
+.SH SYNOPSIS
+	#include "main.h"
+	int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+	The printf function prints an output according to the format by using format specifiers, the result is a string of arguments
+	that replaces the specifiers.
+
+.B Format is a character string composed of zero or more directives.
+
+.B Conversion specifiers:
+
+.B d, i	
+	 The int argument is converted to signed decimal notation.
+
+.B c
+	The int argument is converted to an unsigned char, and the resulting character is written.
+
+.B s
+	
+	The const char * argument is expected to be a pointer to an array of character type (pointer to a string).
+
+.B  %      
+	A '%' is written.  No argument is converted.  The complete conversion specification is '%%'.
+
+
+.SH RETURN VALUE
+       Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
+
+.SH EXAMPLE
+	To print a strig.
+	
+	#include "main.h"
+
+	_printf("%s", "Holberton School-printf.\n")
+
+.SH AUTHOR
+	Written by Johana Amorin and Federico Jalife.
