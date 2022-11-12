@@ -4,6 +4,7 @@
 	_printf - format and print data
 
 .SH SYNOPSIS
+
 	#include "main.h"
 	int _printf(const char *format, ...);
 
@@ -15,13 +16,16 @@
 
 .B Conversion specifiers:
 
-.B d, i	
-	 The int argument is converted to signed decimal notation.
+.B %d
+	 Print a decimal argument.
 
-.B c
+.B %i
+	 Print an integer argument.
+
+.B %c
 	The int argument is converted to an unsigned char, and the resulting character is written.
 
-.B s
+.B %s
 	
 	The const char * argument is expected to be a pointer to an array of character type (pointer to a string).
 
