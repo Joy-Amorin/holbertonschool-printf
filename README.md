@@ -2,7 +2,7 @@
 This project consists of creating a reduced version of printf, with only a few conversion parameters.
  It is the first group project of the Holberton School intensive program
 
-Parametros de con versión:
+Conversion parameters:
 <table>
       	<tr>
 	<th>type</th>
