@@ -1,7 +1,6 @@
 <h1>Holberton School printf project</h1>
-
-Este proyecto consiste en crear una version reducida de printf, con solo algunos parametros de conversión.
-Es el primer proyecto en grupo del programa intensivo de Holberton School.
+This project consists of creating a reduced version of printf, with only a few conversion parameters.
+ It is the first group project of the Holberton School intensive program
 
 Parametros de con versión:
 <table>
@@ -45,5 +44,7 @@ Parametros de con versión:
   <ul>
   <li>write (man 2 write)</li>
   <li>malloc (man 3 malloc)</li>
- 48 <li>free (man 3 free)</li>
-<li>va_start (man 3 va_start)
+  <li>free (man 3 free)</li>
+ <li>va_start (man 3 va_start)</li>
+
+<h2>Flow chart</h2>
