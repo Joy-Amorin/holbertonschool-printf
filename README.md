@@ -48,4 +48,5 @@ Parametros de con versión:
  <li>va_start (man 3 va_start)</li>
 
 <h2>Flow chart</h2>
-![Diagrama de flujo Printf (1)](https://user-images.githubusercontent.com/113919575/201540011-92ffe124-d86f-474f-8d01-3114575251f3.jpg)
+
+![Diagrama de flujo Printf](https://user-images.githubusercontent.com/113919575/201540141-62bcbd34-9bf5-468e-a757-8ea83dffcd96.jpg)
